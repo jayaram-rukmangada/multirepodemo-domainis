@@ -1,0 +1,999 @@
+{
+  "@class" : ".ModelDef",
+  "modelIdentifier" : {
+    "@class" : ".ModelIdentifier",
+    "projectName" : "AcmeOrder",
+    "modelName" : "OrdersInbound",
+    "modelVersion" : "1"
+  },
+  "productVersion" : "10.1",
+  "displayName" : "OrdersInbound",
+  "originId" : -534239281,
+  "pools" : [ {
+    "@class" : ".Pool",
+    "id" : "46",
+    "label" : "ACME Corp.",
+    "labelColor" : {
+      "@class" : ".Color",
+      "red" : 153,
+      "green" : 204,
+      "blue" : 255
+    },
+    "location" : {
+      "@class" : ".Location",
+      "x" : 280,
+      "y" : 13
+    },
+    "lanes" : [ {
+      "@class" : ".Lane",
+      "id" : "66643016-1dee-4ef7-99f8-12c54ed7d317",
+      "label" : "Sales",
+      "labelColor" : {
+        "@class" : ".Color",
+        "red" : 221,
+        "green" : 238,
+        "blue" : 255
+      },
+      "backgroundColor" : {
+        "@class" : ".Color",
+        "red" : 255,
+        "green" : 255,
+        "blue" : 213
+      },
+      "size" : {
+        "@class" : ".Size",
+        "width" : 469,
+        "height" : 238
+      },
+      "steps" : [ {
+        "@class" : ".CallActivityGoto",
+        "id" : "S9999",
+        "label" : "GotoCallActivity"
+      }, {
+        "@class" : ".ServiceTask",
+        "id" : "S19",
+        "description" : "",
+        "location" : {
+          "@class" : ".Location",
+          "x" : 44,
+          "y" : 137
+        },
+        "size" : {
+          "@class" : ".Size",
+          "width" : 93,
+          "height" : 61
+        },
+        "label" : "Validate Order",
+        "labelLayout" : {
+          "@class" : ".LabelLayout",
+          "defaultLocation" : true,
+          "font" : {
+            "@class" : ".Font",
+            "family" : "Arial",
+            "color" : {
+              "@class" : ".Color",
+              "red" : 0,
+              "green" : 0,
+              "blue" : 0
+            },
+            "size" : 8
+          }
+        },
+        "ornament" : {
+          "@class" : ".OrnamentBuiltIn",
+          "filename" : "32_purchase_order.png"
+        }
+      }, {
+        "@class" : ".ServiceTask",
+        "id" : "S51",
+        "description" : "",
+        "location" : {
+          "@class" : ".Location",
+          "x" : 167,
+          "y" : 137
+        },
+        "size" : {
+          "@class" : ".Size",
+          "width" : 93,
+          "height" : 61
+        },
+        "label" : "Map to Canonical",
+        "labelLayout" : {
+          "@class" : ".LabelLayout",
+          "defaultLocation" : true,
+          "font" : {
+            "@class" : ".Font",
+            "family" : "Arial",
+            "color" : {
+              "@class" : ".Color",
+              "red" : 0,
+              "green" : 0,
+              "blue" : 0
+            },
+            "size" : 8
+          }
+        },
+        "ornament" : {
+          "@class" : ".OrnamentBuiltIn",
+          "filename" : "32_web_server.png"
+        }
+      }, {
+        "@class" : ".StartMessageEvent",
+        "id" : "S18",
+        "description" : "",
+        "location" : {
+          "@class" : ".Location",
+          "x" : 77,
+          "y" : 52
+        },
+        "size" : {
+          "@class" : ".Size",
+          "width" : 27,
+          "height" : 27
+        },
+        "label" : "Order received",
+        "dataSpecification" : {
+          "@class" : ".DataSpecification",
+          "outputs" : [ "OrderRequest" ]
+        },
+        "labelLayout" : {
+          "@class" : ".LabelLayout",
+          "defaultLocation" : true,
+          "font" : {
+            "@class" : ".Font",
+            "family" : "Arial",
+            "color" : {
+              "@class" : ".Color",
+              "red" : 0,
+              "green" : 0,
+              "blue" : 0
+            },
+            "size" : 8
+          }
+        },
+        "dataItemName" : "OrderRequest",
+        "transportInfoSet" : [ {
+          "@class" : ".TransportInfoNative"
+        } ]
+      } ]
+    }, {
+      "@class" : ".Lane",
+      "id" : "ed325add-a6fd-4175-8293-a2d8f88cf77f",
+      "label" : "Connections",
+      "labelColor" : {
+        "@class" : ".Color",
+        "red" : 221,
+        "green" : 238,
+        "blue" : 255
+      },
+      "backgroundColor" : {
+        "@class" : ".Color",
+        "red" : 223,
+        "green" : 255,
+        "blue" : 255
+      },
+      "size" : {
+        "@class" : ".Size",
+        "width" : 469,
+        "height" : 150
+      },
+      "steps" : [ {
+        "@class" : ".EndNoneEvent",
+        "id" : "S69",
+        "description" : "",
+        "location" : {
+          "@class" : ".Location",
+          "x" : 417,
+          "y" : 292
+        },
+        "size" : {
+          "@class" : ".Size",
+          "width" : 27,
+          "height" : 27
+        },
+        "label" : "Process ended successfully",
+        "labelLayout" : {
+          "@class" : ".LabelLayout",
+          "defaultLocation" : true,
+          "font" : {
+            "@class" : ".Font",
+            "family" : "Arial",
+            "color" : {
+              "@class" : ".Color",
+              "red" : 0,
+              "green" : 0,
+              "blue" : 0
+            },
+            "size" : 8
+          }
+        }
+      }, {
+        "@class" : ".ServiceTask",
+        "id" : "S22",
+        "description" : "",
+        "location" : {
+          "@class" : ".Location",
+          "x" : 290,
+          "y" : 275
+        },
+        "size" : {
+          "@class" : ".Size",
+          "width" : 93,
+          "height" : 61
+        },
+        "label" : "Send to ORMS",
+        "labelLayout" : {
+          "@class" : ".LabelLayout",
+          "defaultLocation" : true,
+          "font" : {
+            "@class" : ".Font",
+            "family" : "Arial",
+            "color" : {
+              "@class" : ".Color",
+              "red" : 0,
+              "green" : 0,
+              "blue" : 0
+            },
+            "size" : 8
+          }
+        },
+        "ornament" : {
+          "@class" : ".OrnamentBuiltIn",
+          "filename" : "32_database_1.png"
+        }
+      } ]
+    }, {
+      "@class" : ".Lane",
+      "id" : "98535091-c0cd-4d71-b4ce-40fc1b61436e",
+      "label" : "Error Handling",
+      "labelColor" : {
+        "@class" : ".Color",
+        "red" : 221,
+        "green" : 238,
+        "blue" : 255
+      },
+      "backgroundColor" : {
+        "@class" : ".Color",
+        "red" : 255,
+        "green" : 230,
+        "blue" : 230
+      },
+      "size" : {
+        "@class" : ".Size",
+        "width" : 469,
+        "height" : 167
+      },
+      "steps" : [ {
+        "@class" : ".EventSubprocess",
+        "id" : "C31",
+        "description" : "",
+        "location" : {
+          "@class" : ".Location",
+          "x" : 44,
+          "y" : 393
+        },
+        "size" : {
+          "@class" : ".Size",
+          "width" : 400,
+          "height" : 150
+        },
+        "label" : "Process Error Handling",
+        "labelLayout" : {
+          "@class" : ".LabelLayout",
+          "defaultLocation" : true,
+          "font" : {
+            "@class" : ".Font",
+            "family" : "Arial",
+            "color" : {
+              "@class" : ".Color",
+              "red" : 0,
+              "green" : 0,
+              "blue" : 0
+            },
+            "size" : 8
+          }
+        },
+        "steps" : [ {
+          "@class" : ".ServiceTask",
+          "id" : "S33",
+          "description" : "",
+          "location" : {
+            "@class" : ".Location",
+            "x" : 129,
+            "y" : 56
+          },
+          "size" : {
+            "@class" : ".Size",
+            "width" : 93,
+            "height" : 61
+          },
+          "label" : "Handle General Errors",
+          "inputMap" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<IDataXMLCoder version=\"1.0\">\n  <record javaclass=\"com.wm.data.ISMemDataImpl\">\n    <value name=\"type\">ROOT</value>\n    <null name=\"label\"/>\n    <list name=\"nodes\">\n      <record javaclass=\"com.wm.util.Values\">\n        <value name=\"comment\"></value>\n        <value name=\"type\">MAP</value>\n        <value name=\"timeout\"></value>\n        <value name=\"mode\">STANDALONE</value>\n      </record>\n    </list>\n    <value name=\"version\">3.0</value>\n    <value name=\"cleanup\">true</value>\n    <null name=\"parentWsd\"/>\n  </record>\n</IDataXMLCoder>\n",
+          "outputMap" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<IDataXMLCoder version=\"1.0\">\n  <record javaclass=\"com.wm.data.ISMemDataImpl\">\n    <value name=\"type\">ROOT</value>\n    <null name=\"label\"/>\n    <list name=\"nodes\">\n      <record javaclass=\"com.wm.util.Values\">\n        <value name=\"comment\"></value>\n        <value name=\"type\">MAP</value>\n        <value name=\"timeout\"></value>\n        <value name=\"mode\">STANDALONE</value>\n      </record>\n    </list>\n    <value name=\"version\">3.0</value>\n    <value name=\"cleanup\">true</value>\n    <null name=\"parentWsd\"/>\n  </record>\n</IDataXMLCoder>\n",
+          "subprocessId" : "C31",
+          "labelLayout" : {
+            "@class" : ".LabelLayout",
+            "defaultLocation" : true,
+            "font" : {
+              "@class" : ".Font",
+              "family" : "Arial",
+              "color" : {
+                "@class" : ".Color",
+                "red" : 0,
+                "green" : 0,
+                "blue" : 0
+              },
+              "size" : 8
+            }
+          }
+        }, {
+          "@class" : ".StartErrorEvent",
+          "id" : "S32",
+          "description" : "",
+          "location" : {
+            "@class" : ".Location",
+            "x" : 35,
+            "y" : 73
+          },
+          "size" : {
+            "@class" : ".Size",
+            "width" : 27,
+            "height" : 27
+          },
+          "label" : "Process Error caught",
+          "subprocessId" : "C31",
+          "labelLayout" : {
+            "@class" : ".LabelLayout",
+            "defaultLocation" : true,
+            "font" : {
+              "@class" : ".Font",
+              "family" : "Arial",
+              "color" : {
+                "@class" : ".Color",
+                "red" : 0,
+                "green" : 0,
+                "blue" : 0
+              },
+              "size" : 8
+            }
+          }
+        }, {
+          "@class" : ".EndTerminateEvent",
+          "id" : "S35",
+          "description" : "",
+          "location" : {
+            "@class" : ".Location",
+            "x" : 274,
+            "y" : 73
+          },
+          "size" : {
+            "@class" : ".Size",
+            "width" : 27,
+            "height" : 27
+          },
+          "label" : "Process terminated with Error",
+          "inputMap" : "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<IDataXMLCoder version=\"1.0\">\n  <record javaclass=\"com.wm.data.ISMemDataImpl\">\n    <value name=\"type\">ROOT</value>\n    <null name=\"label\"/>\n    <list name=\"nodes\">\n      <record javaclass=\"com.wm.util.Values\">\n        <value name=\"comment\"></value>\n        <value name=\"type\">MAP</value>\n        <value name=\"timeout\"></value>\n        <value name=\"mode\">STANDALONE</value>\n      </record>\n    </list>\n    <value name=\"version\">3.0</value>\n    <value name=\"cleanup\">true</value>\n    <null name=\"parentWsd\"/>\n  </record>\n</IDataXMLCoder>\n",
+          "subprocessId" : "C31",
+          "labelLayout" : {
+            "@class" : ".LabelLayout",
+            "defaultLocation" : true,
+            "font" : {
+              "@class" : ".Font",
+              "family" : "Arial",
+              "color" : {
+                "@class" : ".Color",
+                "red" : 0,
+                "green" : 0,
+                "blue" : 0
+              },
+              "size" : 8
+            }
+          }
+        } ],
+        "sequenceFlows" : [ {
+          "@class" : ".SequenceFlow",
+          "id" : "T37",
+          "sourceStepId" : "S33",
+          "targetStepId" : "S35",
+          "lineColor" : {
+            "@class" : ".Color",
+            "red" : 0,
+            "green" : 0,
+            "blue" : 255
+          },
+          "lineShape" : "STRAIGHT",
+          "sourceLocation" : {
+            "@class" : ".Location",
+            "x" : 222,
+            "y" : 86
+          },
+          "targetLocation" : {
+            "@class" : ".Location",
+            "x" : 274,
+            "y" : 86
+          },
+          "bendpoints" : [ {
+            "@class" : ".Location",
+            "x" : 248,
+            "y" : 86
+          }, {
+            "@class" : ".Location",
+            "x" : 248,
+            "y" : 86
+          } ],
+          "labelLayout" : {
+            "@class" : ".LabelLayout",
+            "defaultLocation" : true,
+            "font" : {
+              "@class" : ".Font",
+              "family" : "Arial",
+              "color" : {
+                "@class" : ".Color",
+                "red" : 0,
+                "green" : 0,
+                "blue" : 0
+              },
+              "size" : 8
+            }
+          }
+        }, {
+          "@class" : ".SequenceFlow",
+          "id" : "T34",
+          "sourceStepId" : "S32",
+          "targetStepId" : "S33",
+          "lineColor" : {
+            "@class" : ".Color",
+            "red" : 0,
+            "green" : 0,
+            "blue" : 255
+          },
+          "lineShape" : "STRAIGHT",
+          "sourceLocation" : {
+            "@class" : ".Location",
+            "x" : 62,
+            "y" : 86
+          },
+          "targetLocation" : {
+            "@class" : ".Location",
+            "x" : 129,
+            "y" : 86
+          },
+          "bendpoints" : [ {
+            "@class" : ".Location",
+            "x" : 94,
+            "y" : 86
+          }, {
+            "@class" : ".Location",
+            "x" : 94,
+            "y" : 86
+          } ],
+          "labelLayout" : {
+            "@class" : ".LabelLayout",
+            "defaultLocation" : true,
+            "font" : {
+              "@class" : ".Font",
+              "family" : "Arial",
+              "color" : {
+                "@class" : ".Color",
+                "red" : 0,
+                "green" : 0,
+                "blue" : 0
+              },
+              "size" : 8
+            }
+          }
+        } ],
+        "collapsedSize" : {
+          "@class" : ".Size",
+          "width" : 93,
+          "height" : 61
+        }
+      } ]
+    } ],
+    "sequenceFlows" : [ {
+      "@class" : ".SequenceFlow",
+      "id" : "T52",
+      "sourceStepId" : "S18",
+      "targetStepId" : "S19",
+      "lineColor" : {
+        "@class" : ".Color",
+        "red" : 0,
+        "green" : 0,
+        "blue" : 255
+      },
+      "lineShape" : "STRAIGHT",
+      "sourceLocation" : {
+        "@class" : ".Location",
+        "x" : 90,
+        "y" : 79
+      },
+      "targetLocation" : {
+        "@class" : ".Location",
+        "x" : 90,
+        "y" : 137
+      },
+      "bendpoints" : [ {
+        "@class" : ".Location",
+        "x" : 400,
+        "y" : 122
+      }, {
+        "@class" : ".Location",
+        "x" : 400,
+        "y" : 122
+      } ],
+      "labelLayout" : {
+        "@class" : ".LabelLayout",
+        "defaultLocation" : true,
+        "font" : {
+          "@class" : ".Font",
+          "family" : "Arial",
+          "color" : {
+            "@class" : ".Color",
+            "red" : 0,
+            "green" : 0,
+            "blue" : 0
+          },
+          "size" : 8
+        }
+      }
+    }, {
+      "@class" : ".SequenceFlow",
+      "id" : "T53",
+      "sourceStepId" : "S19",
+      "targetStepId" : "S51",
+      "lineColor" : {
+        "@class" : ".Color",
+        "red" : 0,
+        "green" : 0,
+        "blue" : 255
+      },
+      "lineShape" : "STRAIGHT",
+      "sourceLocation" : {
+        "@class" : ".Location",
+        "x" : 137,
+        "y" : 167
+      },
+      "targetLocation" : {
+        "@class" : ".Location",
+        "x" : 167,
+        "y" : 167
+      },
+      "bendpoints" : [ {
+        "@class" : ".Location",
+        "x" : 462,
+        "y" : 181
+      }, {
+        "@class" : ".Location",
+        "x" : 462,
+        "y" : 181
+      } ],
+      "labelLayout" : {
+        "@class" : ".LabelLayout",
+        "defaultLocation" : true,
+        "font" : {
+          "@class" : ".Font",
+          "family" : "Arial",
+          "color" : {
+            "@class" : ".Color",
+            "red" : 0,
+            "green" : 0,
+            "blue" : 0
+          },
+          "size" : 8
+        }
+      }
+    }, {
+      "@class" : ".SequenceFlow",
+      "id" : "T70",
+      "sourceStepId" : "S22",
+      "targetStepId" : "S69",
+      "lineColor" : {
+        "@class" : ".Color",
+        "red" : 0,
+        "green" : 0,
+        "blue" : 255
+      },
+      "lineShape" : "STRAIGHT",
+      "sourceLocation" : {
+        "@class" : ".Location",
+        "x" : 383,
+        "y" : 305
+      },
+      "targetLocation" : {
+        "@class" : ".Location",
+        "x" : 417,
+        "y" : 305
+      },
+      "bendpoints" : [ {
+        "@class" : ".Location",
+        "x" : 710,
+        "y" : 319
+      }, {
+        "@class" : ".Location",
+        "x" : 710,
+        "y" : 319
+      } ],
+      "labelLayout" : {
+        "@class" : ".LabelLayout",
+        "defaultLocation" : true,
+        "font" : {
+          "@class" : ".Font",
+          "family" : "Arial",
+          "color" : {
+            "@class" : ".Color",
+            "red" : 0,
+            "green" : 0,
+            "blue" : 0
+          },
+          "size" : 8
+        }
+      }
+    }, {
+      "@class" : ".SequenceFlow",
+      "id" : "T54",
+      "sourceStepId" : "S51",
+      "targetStepId" : "S22",
+      "lineColor" : {
+        "@class" : ".Color",
+        "red" : 0,
+        "green" : 0,
+        "blue" : 255
+      },
+      "lineShape" : "STRAIGHT",
+      "sourceLocation" : {
+        "@class" : ".Location",
+        "x" : 260,
+        "y" : 167
+      },
+      "targetLocation" : {
+        "@class" : ".Location",
+        "x" : 290,
+        "y" : 305
+      },
+      "bendpoints" : [ {
+        "@class" : ".Location",
+        "x" : 584,
+        "y" : 181
+      }, {
+        "@class" : ".Location",
+        "x" : 584,
+        "y" : 319
+      } ],
+      "labelLayout" : {
+        "@class" : ".LabelLayout",
+        "defaultLocation" : true,
+        "font" : {
+          "@class" : ".Font",
+          "family" : "Arial",
+          "color" : {
+            "@class" : ".Color",
+            "red" : 0,
+            "green" : 0,
+            "blue" : 0
+          },
+          "size" : 8
+        }
+      }
+    } ]
+  }, {
+    "@class" : ".Pool",
+    "id" : "39",
+    "label" : "ACME Customer",
+    "labelColor" : {
+      "@class" : ".Color",
+      "red" : 192,
+      "green" : 192,
+      "blue" : 192
+    },
+    "location" : {
+      "@class" : ".Location",
+      "x" : 33,
+      "y" : 13
+    },
+    "lanes" : [ {
+      "@class" : ".Lane",
+      "id" : "f6000fe8-b8ce-4f5e-bb4a-323296674036",
+      "label" : "ACME Customer",
+      "labelColor" : {
+        "@class" : ".Color",
+        "red" : 234,
+        "green" : 234,
+        "blue" : 234
+      },
+      "backgroundColor" : {
+        "@class" : ".Color",
+        "red" : 234,
+        "green" : 234,
+        "blue" : 234
+      },
+      "size" : {
+        "@class" : ".Size",
+        "width" : 203,
+        "height" : 150
+      },
+      "steps" : [ {
+        "@class" : ".StartNoneEvent",
+        "id" : "S61",
+        "description" : "",
+        "location" : {
+          "@class" : ".Location",
+          "x" : 37,
+          "y" : 57
+        },
+        "size" : {
+          "@class" : ".Size",
+          "width" : 27,
+          "height" : 27
+        },
+        "label" : "",
+        "labelLayout" : {
+          "@class" : ".LabelLayout",
+          "defaultLocation" : true,
+          "font" : {
+            "@class" : ".Font",
+            "family" : "Arial",
+            "color" : {
+              "@class" : ".Color",
+              "red" : 0,
+              "green" : 0,
+              "blue" : 0
+            },
+            "size" : 8
+          }
+        }
+      }, {
+        "@class" : ".AbstractTask",
+        "id" : "S65",
+        "description" : "",
+        "location" : {
+          "@class" : ".Location",
+          "x" : 76,
+          "y" : 40
+        },
+        "size" : {
+          "@class" : ".Size",
+          "width" : 93,
+          "height" : 61
+        },
+        "label" : "Send Order",
+        "labelLayout" : {
+          "@class" : ".LabelLayout",
+          "defaultLocation" : true,
+          "font" : {
+            "@class" : ".Font",
+            "family" : "Arial",
+            "color" : {
+              "@class" : ".Color",
+              "red" : 0,
+              "green" : 0,
+              "blue" : 0
+            },
+            "size" : 8
+          }
+        },
+        "ornament" : {
+          "@class" : ".OrnamentBuiltIn",
+          "filename" : "32_manager_with_clipboard.png"
+        }
+      } ]
+    } ],
+    "sequenceFlows" : [ {
+      "@class" : ".SequenceFlow",
+      "id" : "T66",
+      "sourceStepId" : "S61",
+      "targetStepId" : "S65",
+      "lineColor" : {
+        "@class" : ".Color",
+        "red" : 0,
+        "green" : 0,
+        "blue" : 255
+      },
+      "lineShape" : "STRAIGHT",
+      "sourceLocation" : {
+        "@class" : ".Location",
+        "x" : 64,
+        "y" : 70
+      },
+      "targetLocation" : {
+        "@class" : ".Location",
+        "x" : 76,
+        "y" : 70
+      },
+      "bendpoints" : [ {
+        "@class" : ".Location",
+        "x" : 132,
+        "y" : 84
+      }, {
+        "@class" : ".Location",
+        "x" : 132,
+        "y" : 84
+      } ],
+      "labelLayout" : {
+        "@class" : ".LabelLayout",
+        "defaultLocation" : true,
+        "font" : {
+          "@class" : ".Font",
+          "family" : "Arial",
+          "color" : {
+            "@class" : ".Color",
+            "red" : 0,
+            "green" : 0,
+            "blue" : 0
+          },
+          "size" : 8
+        }
+      }
+    } ]
+  }, {
+    "@class" : ".Pool",
+    "id" : "58",
+    "label" : "ACME Backend",
+    "labelColor" : {
+      "@class" : ".Color",
+      "red" : 192,
+      "green" : 192,
+      "blue" : 192
+    },
+    "location" : {
+      "@class" : ".Location",
+      "x" : 796,
+      "y" : 13
+    },
+    "lanes" : [ {
+      "@class" : ".Lane",
+      "id" : "e55d77a6-a55e-430f-a532-ff94a75b5c8b",
+      "label" : "ACME Backend",
+      "labelColor" : {
+        "@class" : ".Color",
+        "red" : 234,
+        "green" : 234,
+        "blue" : 234
+      },
+      "backgroundColor" : {
+        "@class" : ".Color",
+        "red" : 234,
+        "green" : 234,
+        "blue" : 234
+      },
+      "size" : {
+        "@class" : ".Size",
+        "width" : 206,
+        "height" : 150
+      },
+      "steps" : [ {
+        "@class" : ".StartNoneEvent",
+        "id" : "S63",
+        "description" : "",
+        "location" : {
+          "@class" : ".Location",
+          "x" : 34,
+          "y" : 60
+        },
+        "size" : {
+          "@class" : ".Size",
+          "width" : 27,
+          "height" : 27
+        },
+        "label" : "",
+        "labelLayout" : {
+          "@class" : ".LabelLayout",
+          "defaultLocation" : true,
+          "font" : {
+            "@class" : ".Font",
+            "family" : "Arial",
+            "color" : {
+              "@class" : ".Color",
+              "red" : 0,
+              "green" : 0,
+              "blue" : 0
+            },
+            "size" : 8
+          }
+        }
+      }, {
+        "@class" : ".AbstractTask",
+        "id" : "S67",
+        "description" : "",
+        "location" : {
+          "@class" : ".Location",
+          "x" : 85,
+          "y" : 43
+        },
+        "size" : {
+          "@class" : ".Size",
+          "width" : 93,
+          "height" : 61
+        },
+        "label" : "Notify Customer",
+        "labelLayout" : {
+          "@class" : ".LabelLayout",
+          "defaultLocation" : true,
+          "font" : {
+            "@class" : ".Font",
+            "family" : "Arial",
+            "color" : {
+              "@class" : ".Color",
+              "red" : 0,
+              "green" : 0,
+              "blue" : 0
+            },
+            "size" : 8
+          }
+        },
+        "ornament" : {
+          "@class" : ".OrnamentBuiltIn",
+          "filename" : "32_envelope.png"
+        }
+      } ]
+    } ],
+    "sequenceFlows" : [ {
+      "@class" : ".SequenceFlow",
+      "id" : "T68",
+      "sourceStepId" : "S63",
+      "targetStepId" : "S67",
+      "lineColor" : {
+        "@class" : ".Color",
+        "red" : 0,
+        "green" : 0,
+        "blue" : 255
+      },
+      "lineShape" : "STRAIGHT",
+      "sourceLocation" : {
+        "@class" : ".Location",
+        "x" : 61,
+        "y" : 73
+      },
+      "targetLocation" : {
+        "@class" : ".Location",
+        "x" : 85,
+        "y" : 73
+      },
+      "bendpoints" : [ {
+        "@class" : ".Location",
+        "x" : 898,
+        "y" : 87
+      }, {
+        "@class" : ".Location",
+        "x" : 898,
+        "y" : 87
+      } ],
+      "labelLayout" : {
+        "@class" : ".LabelLayout",
+        "defaultLocation" : true,
+        "font" : {
+          "@class" : ".Font",
+          "family" : "Arial",
+          "color" : {
+            "@class" : ".Color",
+            "red" : 0,
+            "green" : 0,
+            "blue" : 0
+          },
+          "size" : 8
+        }
+      }
+    } ]
+  } ],
+  "dataItems" : [ {
+    "@class" : ".DataItem",
+    "name" : "OrderRequest",
+    "type" : "DOCREF",
+    "docRefType" : "acme.docs.request:OrderRequest",
+    "description" : ""
+  }, {
+    "@class" : ".DataItem",
+    "name" : "OrderCanonical",
+    "type" : "DOCREF",
+    "docRefType" : "acme.docs:OrderCanonical",
+    "description" : ""
+  }, {
+    "@class" : ".DataItem",
+    "name" : "isValid",
+    "type" : "STRING",
+    "description" : ""
+  } ],
+  "creator" : "Training",
+  "executablePoolId" : "46",
+  "designLogicalServer" : "Default",
+  "flowLabelPref" : "EXPRESSION"
+}

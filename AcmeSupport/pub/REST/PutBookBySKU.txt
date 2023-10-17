@@ -1,0 +1,9 @@
+URL: http://localhost:5555/restv2/bookInformation/isbn/12
+
+Method:  PATCH
+
+requestBody:   
+
+comment=Authorized+german+translation+of+the+original+english+edition
+
+Authorization:  Basic (Administrator/manage)

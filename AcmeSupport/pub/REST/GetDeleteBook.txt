@@ -1,0 +1,15 @@
+Get all books URL:  http://localhost:5555/restv2/bookInformation/
+
+Method: GET
+
+Headers:  Basic Authorization   (Administrator/manage)
+---------------------------------
+
+Get book 12 URL:  http://localhost:5555/restv2/bookInformation/isbn/12
+
+Method:  GET
+---------------------------------
+
+Delete book 12 URL:  http://localhost:5555/restv2/bookInformation/isbn/12
+
+Method:  DELETE

@@ -1,0 +1,83 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "bookInfoDescriptor"
+host: "daeitrain29039.eur.ad.sag:5555"
+basePath: "/restv2"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /bookInformation:
+    get:
+      description: ""
+      operationId: "bookInformation_GET"
+      consumes:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+  /bookInformation/isbn/{id}:
+    get:
+      description: ""
+      operationId: "bookInformationisbnid_GET_2"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Book's ISBN"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+    post:
+      description: ""
+      operationId: "bookInformationisbnid_POST_2"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Book's ISBN"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+    delete:
+      description: ""
+      operationId: "bookInformationisbnid_DELETE_2"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Book's ISBN"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"
+    patch:
+      description: ""
+      operationId: "bookInformationisbnid_PATCH_2"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "Book's ISBN"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "Successful"
+        401:
+          description: "Access Denied"

@@ -1,0 +1,9 @@
+URL:  http://localhost:5555/restv2/bookInformation/isbn/12
+
+Method:  POST
+
+Request Body:  
+
+author=Marshall+B.+Rosenberg&title=Gewaltfreie+Kommunikation&price=21.90&currency=EUR&isbn-13=978-3-87387-454-1&comment=Eine+Sprache+des+Lebens
+
+Authorization:  Basic (Administrator/manage)
